@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>蘑菇街前端开发规范-javascript篇 | Varman 前端开发-李祺</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Varman 前端开发-李祺">
+    <meta name="author" content="Varman">
+    <meta name="description" content="弱小的人能够保护什么?" />
+    <meta name="keywords" content="varman,前端开发,李祺" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Varman 前端开发-李祺" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/AngularJS/" class="animsition-link">AngularJS<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/" class="animsition-link">JavaScript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Less/" class="animsition-link">Less<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Sass/" class="animsition-link">Sass<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/开发规范/" class="animsition-link">开发规范<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/CSS/开发规范/" class="animsition-link">开发规范<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Varman 前端开发-李祺</a></li>
+                            <li class="nolink"><span>Blog </span></li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>One day you will be the one you want to be.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>又一天过去了。今天过得怎么样，梦想是不是更远了？</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-02-10T02:42:37.000Z" itemprop="datePublished">
+          Feb 10 2015
+      </time>
+    
+    
+    | 
+    <a href='/tags/JavaScript/'>JavaScript</a>,
+    
+    <a href='/tags/开发规范/'>开发规范</a>
+    
+    
+</span>
+                <h1>蘑菇街前端开发规范-javascript篇</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>###蘑菇街前端开发规范-javascript篇<br>该文档定义了蘑菇街前端团队开发中 javascript 的规范，请参与前端开发的成员务必严格按照规范。该规范包含 4 部分，包括代码风格，javascript 语言规范，组件开发规范，文件命名规范。<br>代码风格良好的代码风格和，<br>代码风格的一致性是保证团队高效开发的前提<br>也是作为一支专业团队所必须具备的素质。</p>
+<pre><code>* 缩进ho<span class="variable">w:</span> 使用<span class="number">4</span>个空格作为缩进方式，请将编辑器 <span class="keyword">tab</span> 键为空格代替
+</code></pre><p>why: 由于不同的编辑器对 tab 的显示不一致，为避免代码格式错乱，所以需统一设定。</p>
+<pre><code><span class="bullet">* </span>变量命名风格how: 使用驼峰命名方式
+</code></pre><p>why: getValue(驼峰命名) 和 get_value (下划线分割) 的不同地方是驼峰命名可以少一个字符。：）<br>// 类名：首字母大写，名词<br>ClassDefine </p>
+<p>// 方法名：使用动词，或动名词结合，驼峰<br>defineFunctionName </p>
+<p>// 变量名：与方法名类似，驼峰，对某些类型变量使用不同标识。<br>commonVariable // 普通变量<br>isBoolVariable // bool 类型变量，使用 is 开头<br><em>privateVariable // 私有变量，使用 </em> 开头<br>STATIC<em>VARIABLE // 常量，字母全部大写，中间使用 </em> 分隔</p>
+<p>Other Tips:// 多个变量命名，’,’ 跟在变量名后。（推荐）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var firstVari = 0,&#10;    secondVari = 1;</span><br></pre></td></tr></table></figure></p>
+<p>// 不建议写成以下格式，虽然在一些nodejs项目中你可能看到这样。（不推荐！）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var firstVari = 0&#10;    ,secondVari = 1;</span><br></pre></td></tr></table></figure></p>
+<p>// 另外不建议将右边赋值对齐。（不推荐！）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fristVari       = 0;&#10;var secondLongVari  = 1;</span><br></pre></td></tr></table></figure></p>
+<pre><code>* 代码格式how: 可参见 google c++ <span class="preprocessor">code</span> guide
+</code></pre><p>why: 统一的代码格式是作为一名专业程序员的首要素质，对代码风格，需要严格控制，而代码层面的规范，基本都是相通的。<br>1、每行代码长度<br>    每行长度最长 100 字符，若对长度没概念，可设定编辑器屏幕显示区域来达到控制目的。</p>
+<p>2、空格使用<br>    1）一元操作符前后没有空格，for example:<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i++;&#10;i--;</span><br></pre></td></tr></table></figure></p>
+<pre><code><span class="number">2</span>）二元操作符前后使用一个空格，<span class="keyword">for</span> example:
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myName = &#39;beile&#39;;</span><br></pre></td></tr></table></figure>
+<p>3、方法定义<br>    1）括号前不留空格，’)’ 后使用一个空格，并紧跟 ‘{‘，多个参数使用 ‘, ‘ 隔开，for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function getValue(firstParam, secondParam) &#123;&#10;    // do something ...&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、条件控制<br>    1）难以描述，请注意空格使用，for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// if &#35821;&#21477;&#10;if (condition) &#123;&#10;    // do something...&#10;&#125; else if (condition) &#123;&#10;    // do another thing...&#10;&#125; else &#123;&#10;    // do something...&#10;&#125;&#10;&#10;// for &#35821;&#21477;&#10;for (var i = 0; i &#60; 10; i++) &#123;&#10;    // do something...&#10;&#125;&#10;&#10;// while &#35821;&#21477;&#10;while (condition) &#123;&#10;    // do something...&#10;&#125;&#10;&#10;// switch &#35821;&#21477;&#10;stitch (condition) &#123;&#10;    case &#39;case1&#39;:&#10;        // do something...&#10;    case &#39;case2&#39;:&#10;        // do something...&#10;    default:&#10;        // do something...&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Other Tips:1、如果一行代码太长，请适时断行，for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function theVeryVeryLongMethod(firstLongParams, secondLongParams, thirdLongParams) &#123; // &#19981;&#25512;&#33616;&#65281;&#10;    // do something... &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>推荐，参数换行：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function theVeryVeryLongMethod(firstLongParams, &#10;                                secondLongParams, // &#27880;&#24847;&#31532;&#20108;&#20010;&#21442;&#25968;&#30340;&#32553;&#36827;&#10;                                thirdLongParams) &#123;&#10;    // do something...&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>或所有参数另起一行：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function theVeryVeryLongMethod(&#10;        firstLongParams, // &#21442;&#25968;&#21478;&#36215;&#19968;&#34892;&#65292;&#27880;&#24847;&#20195;&#30721;&#30340;&#32553;&#36827;&#10;        secondLongParams, &#10;        thirdLongParams) &#123;&#10;    // do something...&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>同理，在条件语句中，也需要遵循相同规则。for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (firstLongCondition &#10;    || secondLongCondition // &#26681;&#25454;&#36816;&#31639;&#31526;&#21478;&#36215;&#19968;&#34892;&#10;    || thirdLongCondition) &#123;&#10;    // do something...&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>javascript 语言规范由于 javascript 语言本身的特殊性和所具备的特性，所以在开发 javascript 代码时，我们需要遵循良好的开发规则，从而避免明显的性能问题和一些诡异的 bug。 什么是 javascript ?<br>1）永远记得使用 var 定义变量how: 定义变量的时候，加上 var 就好了。so easy ~<br>why: 若不加 var 变量，则变量的作用域是全局的，会引起一些诡异的 bug。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;&#10;console.log(a); // &#36755;&#20986; 123;&#10;function bb() &#123;&#10;    a = 234; // &#26410;&#21152; var &#23450;&#20041;&#21464;&#37327;&#12290;&#10;&#125;&#10;console.log(a); // &#36755;&#20986; 234; a &#30340;&#20540;&#21464;&#20102;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p>2）永远记得使用分号对语句结尾how: 在语句结尾的时候，加上’;’ 就好了，also so easy ~<br>why: 虽然浏览器在运行 js 代码时，会在语句结尾自动加上分号，但是不写分号是一个不好的编程习惯，另由于上线时，js 代码会经过压缩，不加分号可能会导致压缩后的代码逻辑与自己所实现的不符。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var b = 1 // &#26410;&#21152;&#20998;&#21495;&#32467;&#23614;&#10;-1 == 0;&#10;console.log(b); // &#36755;&#20986;&#20026; true; &#21407;&#22240;&#26159;&#23450;&#20041;&#21464;&#37327; b &#26102;&#26410;&#21152;&#20998;&#21495;&#65292;&#23548;&#33268;&#19982;&#19979;&#38754;&#35821;&#21477;&#20018;&#32852;&#21518;&#65292;b &#34987;&#36171;&#20540;&#20026; 1 - 1;&#10;&#25152;&#20197;&#20026;&#36991;&#20813;&#27492;&#31181;&#24773;&#20917;&#21457;&#29983;&#65292;&#35831;&#22312;&#35821;&#21477;&#32467;&#23614;&#22788;&#21152;&#19978;&#39;;&#39;</span><br></pre></td></tr></table></figure></p>
+<p>3) 创建基本类型时，不要使用 new 基本数据类型的包装对象why: 使用基本包装对象来创建基本数据类型是完全没有必要的，而且还会影响类型检测和逻辑判断<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var isShow = new Boolean(false);&#10;console.log(typeof isShow); // &#36755;&#20986; &#39;object&#39;&#10;if (isShow) &#123; // &#27492;&#22788;&#21028;&#26029;&#20026; true;&#10;    console.log(&#39;isShow is true !&#39;); &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>同理，在创建字符串、数值等数据类型时，也不要使用基本数据类型的包装对象。
+</code></pre><p>4) 数组、对象的创建how: 与基本数据类型类似，当你需要使用数组时，不要使用 Array 的构造函数来创建，而是使用数组的数组的直接字面量。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20351;&#29992; Array &#26500;&#36896;&#20989;&#25968;&#65292;&#30001;&#20110;&#26500;&#36896;&#20989;&#25968;&#23545;&#21442;&#25968;&#30340;&#22788;&#29702;&#19981;&#22815;&#26126;&#30830;&#65292;&#20250;&#24341;&#36215;&#19981;&#24517;&#35201;&#30340;bug&#65292;&#10;// &#20363;&#22914; new Array(3); &#21019;&#24314;&#30340;&#26159;&#19968;&#20010;&#38271;&#24230;&#20026; 3 &#30340;&#31354;&#25968;&#32452;&#65292;&#32780;&#19981;&#26159;&#21019;&#24314;&#19968;&#20010;&#38271;&#24230;&#20026; 1&#12289;&#20540;&#20026; 3 &#30340;&#25968;&#32452;&#12290;&#10;// &#25152;&#20197;&#20351;&#29992;&#30452;&#25509;&#23383;&#38754;&#37327;&#26469;&#21019;&#24314;&#25968;&#32452;&#65292;&#20195;&#30721;&#30340;&#21487;&#35835;&#24615;&#20250;&#26356;&#22909;&#12290;&#20063;&#19981;&#20250;&#32473;&#21518;&#32493;&#22475;&#22353;&#12290;&#10;var arr = [1, 2, 3]; // &#25512;&#33616;&#10;var arr = new Array(1, 2, 3); // &#19981;&#25512;&#33616;&#65281;&#10;&#10;// &#21516;&#26102;&#25512;&#33616;&#20351;&#29992;&#30452;&#25509;&#23383;&#38754;&#37327;&#21019;&#24314;&#23545;&#35937;&#10;var obj = &#123;&#125;; // &#25512;&#33616;&#10;var obj = new Object(); // &#19981;&#25512;&#33616;&#65281;</span><br></pre></td></tr></table></figure></p>
+<pre><code>创建对象时，对象属性请注意缩进， <span class="keyword">for</span> <span class="string">example:</span>
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var user = &#123;&#10;    name: &#39;beile&#39;, // &#20882;&#21495;&#21069;&#19981;&#30041;&#31354;&#26684;&#65292;&#20882;&#21495;&#21518;&#19968;&#20010;&#31354;&#26684;&#10;    sex: &#39;male&#39; // &#26368;&#21518;&#19968;&#20010;&#23646;&#24615;&#21518;&#19981;&#35201;&#21152; &#39;,&#39;&#65292;&#21542;&#21017;&#22312;&#37096;&#20998;&#27983;&#35272;&#22120;&#19979;&#20250;&#25253;&#38169;&#10;&#125;; // &#35831;&#19981;&#35201;&#24536;&#35760;&#39;;&#39;</span><br></pre></td></tr></table></figure>
+<p>5) this 对象的使用how: 在你对 this 对象的指向不明确的时候，请在以下情况中使用 this。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#22312;&#26500;&#36896;&#20989;&#25968;&#20013;&#10;function People(name) &#123;&#10;    this.name = name;&#10;&#125;&#10;// &#22312;&#26500;&#36896;&#20989;&#25968;&#30340;&#21407;&#22411;&#25193;&#23637;&#26041;&#27861;&#20013;&#10;People.prototype.showName = function() &#123;&#10;    console.log(&#39;my name &#39; + this.name);&#10;&#125;&#10;&#10;// &#21478;&#22806;&#22914;&#26524;&#20351;&#29992;&#30340;&#24320;&#21457;&#26694;&#26550;&#26159; jQuery&#65292;&#25512;&#33616;&#23558;&#20107;&#20214;&#35302;&#21457;&#30340; dom &#23545;&#35937;&#36171;&#20540;&#32473;&#19968;&#20010;&#20020;&#26102;&#21464;&#37327;&#12290;for example:&#10;&#10;$(&#39;.selector&#39;).click(function() &#123;&#10;    var self = $(this); // &#21487;&#36991;&#20813;&#22312;&#21518;&#32493;&#30340;&#26041;&#27861;&#20013; $(this) &#23545;&#35937;&#30340;&#25351;&#21521;&#19981;&#26126;&#12290;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>6) 避免使用的方法how: 尽可能不用 eval、with<br>why: please tell me why …囧<br>7) 避免扩展内置对象的原型why: 对内置对象的扩展，会导致所创建的对象上都会有该属性。<br>    对内置对象扩展，一个是内存的浪费，一个是在做某些逻辑判断时会导致问题，for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.name = &#39;hello&#39;; // &#22312; Object &#19978;&#25193;&#23637;&#21407;&#22411; name&#10;var b = &#123;age: 18&#125;; // &#21019;&#24314;&#19968;&#20010;&#23545;&#35937;&#10;for(var n in b) &#123; // &#36941;&#21382; b &#20013;&#23646;&#24615;&#10;    console.log(n); // &#36755;&#20986; name &#12289; age&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>由于扩展了 Object 对象，所以会输出 <span class="property">name</span> 和 age，当然你也可以通过以下代码避免出错：
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(var n in b) &#123;&#10;    if(b.hasOwnProperty(n)) &#123;&#10;        console.log(n); &#21482;&#36755;&#20986; age&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>但是还是需要记住的是，不要在原生对象上扩展原型。
+推荐将方法定义到一个全局对象上来扩展 javascript 所没有的方法，<span class="keyword">for</span> example：
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mx.util.string.getByte = function(str) &#123;&#10;    // do something...&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>8) 大字符串的创建方式how: 通过数组来创建大字符串<br>    不推荐使用 ‘+’ 来拼接大字符串，for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var listHtml = &#39;&#60;ul class=&#34;all_item&#34;&#62;&#39; + &#10;                    &#39;&#60;li class=&#34;item&#34;&#62;first item&#60;/li&#62;&#39; + &#10;                    &#39;&#60;li class=&#34;item&#34;&#62;second item&#60;/li&#62;&#39; + &#10;                &#39;&#60;/ul&#62;&#39;;</span><br></pre></td></tr></table></figure></p>
+<pre><code>通过使用数组来创建大字符串是更好的方式，<span class="keyword">for</span> <span class="string">example:</span>
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var listHtml = [&#10;    &#39;&#60;ul class=&#34;all_item&#34;&#62;&#39;,&#10;        &#39;&#60;li class=&#34;item&#34;&#62;first item&#60;/li&#62;&#39;,&#10;        &#39;&#60;li class=&#34;item&#34;&#62;second item&#60;/li&#62;&#39;,&#10;    &#39;&#60;/ul&#62;&#39;&#10;].join(&#39;&#39;); // &#20351;&#29992; jion &#25340;&#25509;</span><br></pre></td></tr></table></figure>
+<p>组件开发规范1）使用闭包来封装代码块how: 通过使用 var 声明变量和闭包的结合，可以有效控制代码块的作用域，从而避免暴露到全局中。<br>    for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function($, Mx) &#123;&#10;    var fruit = &#39;banner&#39;;&#10;&#125;)(jQuery, Mx); // &#34429;&#28982; jQuery &#26159;&#20840;&#23616;&#21464;&#37327;&#65292;&#20294;&#26368;&#22909;&#22312;&#38381;&#21253;&#20013;&#26174;&#24335;&#22768;&#26126;&#21442;&#25968;&#65292;&#36825;&#26679;&#21487;&#20197;&#26041;&#20415;&#30693;&#36947;&#35813;&#32452;&#20214;&#20351;&#29992;&#20102;&#21738;&#20123;&#26694;&#26550;&#12290;&#21478;&#65306;&#26368;&#21518;&#19981;&#35201;&#24536;&#20102;&#39;;&#39;</span><br></pre></td></tr></table></figure></p>
+<p>2) 代码注释how: 遵循一定的规范，最重要的一点，不要怕注释多！<br>    1、文件头部注释：<br>    包含版权信息或开源协议等，不做强制要求。for example:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#10;// Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);&#10;// you may not use this file except in compliance with the License.&#10;// You may obtain a copy of the License at&#10;//&#10;//      http://www.apache.org/licenses/LICENSE-2.0&#10;//</span><br></pre></td></tr></table></figure></p>
+<pre><code><span class="number">2</span>、自定义 Class 注释：（可以使用多个 * 将注释包裹）<span class="keyword">for</span> example:
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/************************************************ &#10;*&#10;* &#31867;&#30340;&#21151;&#33021;&#20171;&#32461;&#65292;&#31616;&#36848;&#31867;&#30340;&#20351;&#29992;&#26041;&#27861;&#21644;&#21151;&#33021;&#12290;&#10;* @require: a.js&#10;*           b.js // &#20381;&#36182;&#30340; js &#25991;&#20214;&#10;* @author: &#20316;&#32773;&#10;* @create: &#21019;&#24314;&#26102;&#38388;&#10;* @modify: &#26368;&#21518;&#20462;&#25913;&#26102;&#38388;&#65292;&#23545;&#20110;&#36890;&#29992;&#32452;&#20214;&#19981;&#20570;&#24378;&#21046;&#35201;&#27714;&#12290;&#20294;&#26159;&#23545;&#20110;&#19994;&#21153;&#20195;&#30721;&#65292;&#27599;&#27425;&#20462;&#25913;&#38656;&#20889;&#26126;&#36127;&#36131;&#20154;&#21644;&#26102;&#38388;&#12290;&#10;* &#10;*************************************************</span><br></pre></td></tr></table></figure>
+<pre><code><span class="number">3</span>、方法的注释 <span class="keyword">for</span> example: 
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**&#10; * &#26041;&#27861;&#30340;&#21151;&#33021;&#20171;&#32461;&#10; * @param: &#123;string&#125; str&#10; *          &#123;object&#125; options // &#25351;&#26126;&#21442;&#25968;&#30340;&#31867;&#22411;&#10; * @return: &#123;string&#125; str // &#36820;&#22238;&#31867;&#22411;&#10; * @author: &#20316;&#32773;&#10; * @create: &#21019;&#24314;&#26102;&#38388;&#10; * @modify: &#26368;&#21518;&#20462;&#25913;&#26102;&#38388;&#10; */</span><br></pre></td></tr></table></figure>
+<p>3）类构造方式    (function() {<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    // &#39318;&#20808;&#23450;&#20041;&#26500;&#36896;&#20989;&#25968;&#65292;&#10;    function MyClass(options) &#123; // &#21442;&#25968;&#21487;&#36873;&#10;        this.option = options;&#10;    &#125;&#10;&#10;    // &#36890;&#36807;&#21407;&#22411;&#25193;&#23637;&#31867;&#10;    MyClass.prototype.method = function(params) &#123; &#10;        // do something...&#10;    &#125;&#10;&#125;);&#10;&#10;// &#36890;&#36807;&#20351;&#29992; new &#26469;&#21019;&#24314;&#33258;&#23450;&#20041;&#31867;&#30340;&#23454;&#20363;&#10;var myFirstClass = new MyClass(&#123;name: &#39;beile&#39;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Some Tips    为什么使用原型扩展类？<br>    通过使用原型扩展类，在新建类的时候，只有类构造参数中的属性或方法是独立的内存，而原型上的方法的内存是共用的。</p>
+<pre><code>如果你想自定义类的某个方法，若不是全局的改动，直接使用覆盖新建对象的方式来达到个性化的目的，<span class="keyword">for</span> <span class="string">example:</span>
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    myFirstCLass.method = function(params) &#123;&#10;        // do another thing...&#10;    &#125;&#10;```    &#10;    &#32780;&#19981;&#35201;&#30452;&#25509;&#20462;&#25913;&#31867;&#30340;&#21407;&#22411;&#26469;&#36798;&#21040;&#30446;&#30340;&#65292;&#10;```&#123;bash&#125;&#10;    MyClass.prototype.method = function(params) &#123; // &#19981;&#25512;&#33616;&#65281;&#38500;&#38750;&#20320;&#30340;&#25152;&#26377;&#23545;&#35937;&#23454;&#20363;&#37117;&#38656;&#35201;&#20462;&#25913;&#36825;&#20010;&#26041;&#27861;&#12290;&#10;        // do something...&#10;    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>建议在构造函数中只是定义类的属性，不要添加逻辑代码，以免业务变化时，不能很好的适应需求。<span class="keyword">for</span> <span class="string">example:</span> 
+</code></pre><pre><code class="{bash}">// &#22312;&#31867;&#20013;&#21152;&#20102;&#19968;&#27573;&#36923;&#36753;&#20195;&#30721;&#10;function MyClass(options) { // &#21442;&#25968;&#21487;&#36873;&#10;    this.option = options;&#10;    var myLogic = this.option.logic;&#10;    if (myLogic == 0) {&#10;        // do something...&#10;    }&#10;}
+</code></pre>
+<pre><code>这样，每次新建一个对象实例时，都会走这段逻辑。当我某个业务中不需要走 myLogic == <span class="number">0</span> 时，处理就会很麻烦。
+推荐将初始逻辑代码放到一个 init 函数中。
+</code></pre><p>4) 类继承// todo</p>
+<p>文件组织规范// todo ..</p>
+<p>javascript 代码技巧参考示例// todo ..</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/02/10/Less(一)/" style="float: left;">
+        ← Less(一)
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/02/10/团队合作的CSS命名规范/">
+        团队合作的CSS命名规范 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/02/10/蘑菇街前端开发规范-javascript篇/" data-title="蘑菇街前端开发规范-javascript篇" data-url="http://yoursite.com/2015/02/10/蘑菇街前端开发规范-javascript篇/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer>
+    <div class="container">
+            <div class="copy">
+            <span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+                <p>by varman</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

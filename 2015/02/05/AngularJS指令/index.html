@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>AngularJS指令 | Varman 前端开发-李祺</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Varman 前端开发-李祺">
+    <meta name="author" content="Varman">
+    <meta name="description" content="弱小的人能够保护什么?" />
+    <meta name="keywords" content="varman,前端开发,李祺" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Varman 前端开发-李祺" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/AngularJS/" class="animsition-link">AngularJS<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/" class="animsition-link">JavaScript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Less/" class="animsition-link">Less<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Sass/" class="animsition-link">Sass<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/开发规范/" class="animsition-link">开发规范<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/CSS/开发规范/" class="animsition-link">开发规范<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Varman 前端开发-李祺</a></li>
+                            <li class="nolink"><span>Blog </span></li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>One day you will be the one you want to be.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>又一天过去了。今天过得怎么样，梦想是不是更远了？</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-02-05T09:50:15.000Z" itemprop="datePublished">
+          Feb 5 2015
+      </time>
+    
+    
+    | 
+    <a href='/tags/AngularJS/'>AngularJS</a>,
+    
+    <a href='/tags/指令/'>指令</a>
+    
+    
+</span>
+                <h1>AngularJS指令</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>###AngularJS指令<br>指令定义<br>对于指令，可以把它简单的理解成在特定DOM元素上运行的函数，指令可以扩展这个元素<br>的功能。<br>学习指令最快的途径就是亲自使用它<br>当AngularJS编译HTML时就会调用指令调用指令意味着执行指令背后与之相关联的JavaScript代码， 这些代码是我们用指令定义写出来的<br>通过AngularJS模块API中的 .directive() 方法， 我们可以通过传入一个字符串和一个函数来注册一个新指令。其中字符串是这个指令的名字，指令名应该是驼峰命名风格的，函数应该返回一个对象。directive()方法返回的对象中包含了用来定义和配置指令所需的方法和属性。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myApp=angular.module(&#39;myApp&#39;,[]);&#10;myApp.directive(&#39;myDirective&#39;,function()&#123;&#10;&#9;return&#123;&#10;&#9;&#9;restrict: String,&#10;&#9;&#9;priority: Number,&#10;&#9;&#9;terminal: Boolean,&#10;&#9;&#9;template: String or Template Function:&#10;&#9;&#9;function(tElement, tAttrs) &#123;...&#125;,&#10;&#9;&#9;templateUrl: String,&#10;&#9;&#9;replace: Boolean or String,&#10;&#9;&#9;scope: Boolean or Object,&#10;&#9;&#9;transclude: Boolean,&#10;&#9;&#9;controller: String or&#10;&#9;&#9;function(scope, element, attrs, transclude, otherInjectables) &#123; ... &#125;,&#10;&#9;&#9;controllerAs: String,&#10;&#9;&#9;require: String,&#10;&#9;&#9;link: function(scope, iElement, iAttrs) &#123; ... &#125;,&#10;&#9;&#9;compile: // &#36820;&#22238;&#19968;&#20010;&#23545;&#35937;&#25110;&#36830;&#25509;&#20989;&#25968;&#65292;&#22914;&#19979;&#25152;&#31034;&#65306;&#10;&#9;&#9;function(tElement, tAttrs, transclude) &#123;&#10;&#9;&#9;return &#123;&#10;&#9;&#9;pre: function(scope, iElement, iAttrs, controller) &#123; ... &#125;,&#10;&#9;&#9;post: function(scope, iElement, iAttrs, controller) &#123; ... &#125;&#10;&#9;&#9;&#125;&#10;&#9;&#125;&#9;&#10;&#9;&#9;&#10;&#9;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>返回对象里定义了指令的全部行为<br>一个JavaScript对象由键和值组成。当一个给定键的值被设置为一个字符串、布<br>尔值、数字、数组或对象时，我们把这个键称为属性。当把键设置为函数时，<br>我们把它叫做方法</p>
+<p>######restrict<br>restrict 是一个可选的参数。它告诉AngularJS这个指令在DOM中可以何种形式被声明。默<br>认AngularJS认为 restrict 的值是 A ，即以属性的形式来进行声明。<br>    可选值 E(元素 element)<br>        A(属性 attribute)<br>        C(类名 class)<br>        M(注释)</p>
+<pre><code><span class="list">(<span class="keyword">这些选项可以单独使用，也可以混合在一起使用</span>)</span>
+</code></pre><p>######priority<br> 优先级参数可以被设置为一个数值。大多数指令会忽略这个参数，使用默认值0，但也有些<br>场景设置高优先级是非常重要甚至是必须的.例如， ngRepeat 将这个参数设置为1000，这样就可<br>以保证在同一元素上，它总是在其他指令之前被调用</p>
+<p>######terminal<br>这个参数用来告诉AngularJS停止运行当前元素上比本指令优先级低的指令。但同当前指令优先级相同的指令还是会被执行。</p>
+<p>######template<br>一段HTML文本或一个可以接受两个参数的函数，参数为 tElement 和 tAttrs ，并返回一个代表模板的字符<br>串。</p>
+<p>######templateUrl<br>一个代表外部HTML文件路径的字符串 或   一个可以接受两个参数的函数，参数为 tElement 和 tAttrs ，并返回一个外部HTML文件<br>路径的字符串</p>
+<p>(在本地开发时调用模板需要启动本地服务器)</p>
+<p>######replace<br>replace 是一个可选参数，如果设置了这个参数，值必须为 true ，true意味着将会对元素进行替换因为默认值为 false 。默认值意味着模板会被当作子元素插入到调用此指令的元素内部</p>
+<p>######scope<br>scope会创建一个隔离作用域,隔离作用域内加上绑定策略的话可以同指令外部的作用域进行数据绑定<br>为了让新的指令作用域可以访问当前本地作用域中的变量，需要使用下面三种别名中的一种:<br>    1.@ 使用 @ 符号将本地作用域同DOM属性的值进行绑定。指令内部作用域可以使用外部作用域的变量<br>    2.=   与父scope中的属性进行双向数据绑定<br>    3.&amp;   传递一个来自父scope中的值稍后调用</p>
+<p>######tansclude<br>transclude 嵌入 嵌入通常用来创建可复用的组件，典型的例子是模态对话框或导航栏<br>只有当你希望创建一个可以包含任意内容的指令时， 才使用 transclude: true </p>
+<p>######controller<br>controller 参数可以是一个字符串或一个函数。 当设置为字符串时， 会以字符串的值为名字，<br>来查找注册在应用中的控制器的构造函数我们可以将任意可以被注入的AngularJS服务传递给控制器。</p>
+<p>######controllerAs<br>controllerAs 参数用来设置控制器的别名， 可以以此为名来发布控制器， 并且作用域可以访<br>问 controllerAs 。这样就可以在视图中引用控制器，甚至无需注入 $scope </p>
+<p>require （字符串或数组）<br>require 参数可以被设置为字符串或数组， 字符串代表另外一个指令的名字。 require 会将控<br>制器注入到其值所指定的指令中，并作为当前指令的链接函数的第四个参数。</p>
+<p>require 参数的值可以用下面的前缀进行修饰，这会改变查找控制器时的行为：<br>?<br>如果在当前指令中没有找到所需要的控制器，会将 null 作为传给 link 函数的第四个参数。<br>^<br>如果添加了 ^ 前缀，指令会在上游的指令链中查找 require 参数所指定的控制器。<br>?^<br>将前面两个选项的行为组合起来，我们可选择地加载需要的指令并在父指令链中进行查找。<br>没有前缀<br>如果没有前缀，指令将会在自身所提供的控制器中进行查找，如果没有找到任何控制器（或<br>具有指定名字的指令）就抛出一个错误</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/02/10/AngularJS的生命周期/" style="float: left;">
+        ← AngularJS的生命周期
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/02/02/ui-router/">
+        ui-router(一) →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/02/05/AngularJS指令/" data-title="AngularJS指令" data-url="http://yoursite.com/2015/02/05/AngularJS指令/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer>
+    <div class="container">
+            <div class="copy">
+            <span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+                <p>by varman</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>JS数组 | Varman 前端开发-李祺</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Varman 前端开发-李祺">
+    <meta name="author" content="Varman">
+    <meta name="description" content="弱小的人能够保护什么?" />
+    <meta name="keywords" content="varman,前端开发,李祺" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Varman 前端开发-李祺" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/AngularJS/" class="animsition-link">AngularJS<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/" class="animsition-link">JavaScript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Less/" class="animsition-link">Less<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Sass/" class="animsition-link">Sass<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/JavaScript/开发规范/" class="animsition-link">开发规范<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/CSS/开发规范/" class="animsition-link">开发规范<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Varman 前端开发-李祺</a></li>
+                            <li class="nolink"><span>Blog </span></li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>One day you will be the one you want to be.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>又一天过去了。今天过得怎么样，梦想是不是更远了？</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-03-23T07:46:59.000Z" itemprop="datePublished">
+          Mar 23 2015
+      </time>
+    
+    
+    | 
+    <a href='/tags/JavaScript/'>JavaScript</a>,
+    
+    <a href='/tags/数组/'>数组</a>
+    
+    
+</span>
+                <h1>JS数组</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>###JavaScript 数组<br>数组是值的有序集合,每个值叫做元素,每个元素在数组中都有数字位置编号,也就是索引。<br>js中的数组是弱类型的,数组中可以含有不同类型的元素,数组元素甚至可以是对象或其他数组。<br>var arr=[1,true,null,undefined,{x:1},[1,2,3]]<br>创建数组<br>  字面量创建<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> var BAT=[&#39;Alibaba&#39;,&#39;Tenecnt&#39;,&#39;Baidu&#39;]&#10; var students=[&#123;name:&#39;Bosn&#39;,age:27&#125;,&#123;name:&#39;Nunnly&#39;,age:3&#125;]&#10;new Array //&#26500;&#36896;&#22120;&#21019;&#24314;&#25968;&#32452;&#10;var arr= new Array();&#10;var arrWithLength = new Array(100); // undefined &#10;var arrLikesLiteral=new Array(true,false,null,1,2)</span><br></pre></td></tr></table></figure></p>
+<p>  数组元素读写<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,4,5,];&#10;arr[1]; // 2&#10;arr.length;// 5&#10;arr[5]=6;&#10;arr.length; // 6&#10;delete arr[0];&#10;arr[0];// undedfined</span><br></pre></td></tr></table></figure></p>
+<p>数组元素增删<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[];&#10;arr[0]=1;&#10;arr[1]=2;&#10;arr.push(3);&#10;arr; // [1,2,3]&#10;arr[arr.length]=4;&#10;arr; // 1,2,3,4&#10;arr.unshift(0);&#10;arr;// [0,1,2,3,4];&#10;delete arr[2];&#10;arr;//[0,1,undefined,3,4]&#10;arr.length;//5&#10;2 in arr;//false&#10;&#10;arr.length -=1;&#10;arr;//[0,1,undefined,3],4 is removed&#10;&#10;arr.pop();//3 returned by pop&#10;arr;//[0,1,undefined],3 is removed&#10;&#10;arr.shift(); //0 returned by shift&#10;arr;//[1,undefined]</span><br></pre></td></tr></table></figure></p>
+<p>数组迭代<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var i=0,n=10;&#10;var arr=[1,2,3,4,5];&#10;for(;i&#60;n;i++)&#123;&#10;     console.log(arr[i])&#10;&#125;&#10;for(i in arr)&#123;&#10;console.log(arr[i])&#10;&#125;&#10;&#10;Array.prototype.x=&#39;inherited&#39;;&#10;&#10;for(i in arr)&#123;&#10;   console.log(arr[i]);// 1,2,3,4,5,inherited&#10; &#125;&#10;&#10; for(i in arr)&#123;&#10;   if(arr.hasOwnProperty(i))&#123;&#10;       console.log(arr[i]);//1,2,3,4,5&#10;     &#125;&#10;   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>#####二维数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[[0,1],[2,3],[4,5]];&#10;var i=0,j=0;&#10;var row;&#10;for(;i&#60;arr.length;i++)&#123;&#10;  row=arr[i];&#10;  console.log(&#39;row&#39;+i);&#10;  for(j=0;i&#60;row.length;j++)&#123;&#10;    console.log(row[j]);&#10;    &#125;&#10;  &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="稀疏数组">稀疏数组</h5><p>   并不含有从0开始的连续索引.一般Length属性值比实际元素个数大<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr1=[undefined];&#10;var arr2=new Array(1);&#10;0 in arr1;//true&#10;0 in arr 2;//false&#10;arr1.length=100;&#10;arr1[99]=123;&#10;99 in arr1;//true&#10;98 in arr1;//false&#10;&#10;var arr=[,,];&#10;0 in arr; //false</span><br></pre></td></tr></table></figure></p>
+<p>####数组方法<br>原生方法 都在 Array.prototype<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125; =&#62; Object.prototype &#10;[] =&#62; Array.prototype &#10;&#10;Array.prototype.join&#10;Array.prototype.reverse&#10;Array.prototype.sort&#10;Array.prototype.concat&#10;Array.prototype.slice&#10;Array.prototype.splice&#10;Array.prototype.forEach&#10;Array.prototype.map&#10;Array.prototype.splice&#10;Array.prototype.filter&#10;Array.prototype.some&#10;Array.prototype.reduce/reduceRight&#10;Array.prototype.indexOf/lastIndexOf&#10;Array.prototype.isArray</span><br></pre></td></tr></table></figure></p>
+<p>join将数组转化成字符串,传入参数 可以当作分隔符<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3];&#10;arr.join();// &#39;1,2,3,&#39;&#10;arr.join(&#39;_&#39;);// &#39;1_2_3&#39;</span><br></pre></td></tr></table></figure></p>
+<p>reverse 将数组逆序<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3];&#10;arr.reverse();//[3,2,1]&#10;arr;//[3,2,1] &#21407;&#25968;&#32452;&#34987;&#20462;&#25913;</span><br></pre></td></tr></table></figure></p>
+<p>sort 排序<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[&#34;a&#34;,&#34;d&#34;,&#39;c&#39;,&#39;b&#39;];&#10;arr.sort();//[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]&#10;&#10;arr=[13,24,51,3];&#10;arr.sort();//[13,24,3,51]&#10;arr;//[13,24,3,51] &#21407;&#25968;&#32452;&#34987;&#20462;&#25913;&#10;&#10;arr.sort(function(a,b)&#123;&#10;   return a-b;&#10;&#125;)//[3,13,24,51]</span><br></pre></td></tr></table></figure></p>
+<p>concat 合并数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3];&#10;arr.concat(4,5);//[1,2,3,4,5]&#10;arr;//[1,2,3] &#21407;&#25968;&#32452;&#26410;&#34987;&#20462;&#25913;&#10;arr.concat([10,11],13);//[1,2,3,10,11,13]&#10;arr.concat([1,[2,3]]);//[1,2,3,1,[2,3]]</span><br></pre></td></tr></table></figure></p>
+<p>slice  返回部分数组<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,4,5];&#10;arr.slice(1,3);//[2,3]&#10;arr.slice(1);//[2,3,4,5]&#10;arr.slice(1,-1);//[2,3,4]&#10;arr.slice(-4,-3);//[2]</span><br></pre></td></tr></table></figure></p>
+<p>splice 数组拼接<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,4,5];&#10;arr.splice(2);//returns[3,4,5]&#10;arr;//[1,2]; &#21407;&#25968;&#32452;&#34987;&#20462;&#25913;&#10;&#10;arr=[1,2,3,4,5];&#10;arr.splice(2,2);//retirms [3,4]&#10;arr;//[1,2,5];&#10;&#10;arr=[1,2,3,4,5];&#10;arr.splice(1,1,&#39;a&#39;,&#39;b&#39;);//retirms [2]&#10;arr;//[1,&#39;a&#39;,&#39;b&#39;,3,4,5];</span><br></pre></td></tr></table></figure></p>
+<p>forEach  数组遍历(ES5)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,4,5];&#10;arr.forEach(function(x,index,a)&#123;&#10;  console.log(x +&#39;|&#39;+index+&#39;|&#39;+(a===arr))&#10;&#125;)&#10;//1|0|true&#10;//2|1|true&#10;//3|2|true&#10;//4|3|true&#10;//5|4|true</span><br></pre></td></tr></table></figure></p>
+<p>map 数组映射(ES5)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3];&#10;arr.map(function(x)&#123;&#10;  return x+10&#10;&#125;);//[11,12,13]&#10;arr;//[1,2,3]</span><br></pre></td></tr></table></figure></p>
+<p>filter 数组过滤(ES5)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,4,5,6,7,8,9,10];&#10;arr.filter(function(x,index)&#123;&#10;  return index % 3=== 0 || x&#62;=8;&#10;&#125;)//return [1,4,7,8,9,10]&#10;arr;//[1,2,3,4,5,6,7,8,9,10]</span><br></pre></td></tr></table></figure></p>
+<p>every / some  数组判断(ES5)<br>every 表示数组中每个元素都符合条件,some 表示只要任意一个元素符合<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,4,5];&#10;arr.every(function(x)&#123;&#10;  return x&#60;10;&#10;&#125;)//true&#10;arr.every(function(x)&#123;&#10;  return x&#60;3;&#10;&#125;)//false&#10;&#10;var arr=[1,2,3,4,5];&#10;arr.some(function(x)&#123;&#10;  return x ===3;&#10;&#125;)//true&#10;arr.some(function(x)&#123;&#10;  return x===100;&#10;&#125;)//false</span><br></pre></td></tr></table></figure></p>
+<p>reduce / reduceRight   数组中的元素两两进行操作   reduceRight是从右到左<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[3,9,6]&#10;max=arr.reduceRight(function(x,y)&#123;&#10;  console.log(x+&#39;|&#39;+y);&#10;  return x&#62;y?x:y&#10;&#125;);&#10;// 6|9&#10;// 9|3&#10;max;//9</span><br></pre></td></tr></table></figure></p>
+<p>indexOf / lastIndexOf 数组检索 (ES5)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3,2,1]&#10;arr.indexOf(2);//1&#10;arr.indexOf(99);//-1&#10;arr.indexOf(1,1);//4&#10;arr.indexOf(1,-3);//4&#10;arr.lastIndexOf(2);//3</span><br></pre></td></tr></table></figure></p>
+<p>Array.isArray(ES5) 判断是否为数组</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.isArray([]);//true;&#10;&#10;[] instanceof Array;//true&#10;(&#123;&#125;).toString.apply([])===&#39;[object Array]&#39;;//true&#10;[].constructor === Array;//true</span><br></pre></td></tr></table></figure>
+<p>数组本身也是对象<br>数组和对象的相同点：<br>     都可以继承，数组是对象，对象不一定是数组，都可以当作对象添加删除属性<br>不同点：<br>     数组自动更新Length,按索引访问数组常常比访问一般对象属性明显迅速.数组对象 继承了Array.prototype上的大量数组操作方法<br>字符串和数组   字符串是一种类数组的东西.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var str=&#39;hello world&#39;;&#10;str.charAt(0); //&#34;h&#34;&#10;str[1];//e&#10;&#10;Array.prototype.join.call(str,&#39;_&#39;);&#10;//&#34;h_e_l_l_o__w_o_r_l_d&#34;</span><br></pre></td></tr></table></figure></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/03/24/JS函数/" style="float: left;">
+        ← JS函数
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/03/11/JS对象/">
+        JS对象 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/03/23/JS数组/" data-title="JS数组" data-url="http://yoursite.com/2015/03/23/JS数组/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer>
+    <div class="container">
+            <div class="copy">
+            <span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+                <p>by varman</p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
