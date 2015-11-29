@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>JS函数 | Varman 前端开发-李祺</title>
+  <title>Archives: 2015/11 | Varman 前端开发-李祺</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,70 +235,23 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2015-03-24T01:35:10.000Z" itemprop="datePublished">
-          Mar 24 2015
-      </time>
-    
-</span>
-                <h1>JS函数</h1>
-            </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<p>###JavaScript函数<br>函数是一块JavaScript代码,被定义一次,但可以执行和调用多次.JavaScript中的函数也是对象,所以函数可以像其他对象那样操作和传递,所以也常叫JavaScript中的函数为函数对象。<br>这是一个标准的函数由函数名，参数列表，函数体组成:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function foo(x,y)&#123;&#10;  if(typeof x == &#39;number&#39; &#38;&#38; typeof y ===&#39;number&#39;)&#123;&#10;    return x + y;&#10;  &#125;else&#123;&#10;    return 0;&#10;  &#125;&#10;&#125;&#10;&#10;foo(1,2); // 3</span><br></pre></td></tr></table></figure></p>
-<p>函数不同的调用方法:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo();//&#30452;&#25509;&#35843;&#29992;&#10;o.method();//&#23545;&#35937;&#26041;&#27861;&#10;new Foo();//&#26500;&#36896;&#22120;&#10;func.call(o);// call/apply/bind</span><br></pre></td></tr></table></figure></p>
-<p>创建函数 常用的两种方式就是函数声明和函数表达式<br>一个完整以function 开头定义一个函数叫函数声明<br>将一个函数赋值给一个变量叫做函数表达式<br>匿名函数自执行也是函数表达式<br>将函数对象作为一个返回值也是函数表达式<br>有名字的函数赋值给一个变量叫做命名式函数表达式</p>
-<p>函数声明<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function add(a,b)&#123;&#10;  a = +a;  //+ a &#22914;&#26524;a&#26159;&#23383;&#31526;&#20018;&#20250;&#25226;a&#36716;&#21270;&#20026;number&#10;  b = +b;&#10;  if(isNaN(a) || isNaN(b))&#123;&#10;    return ;&#10;  &#125;&#10;  return a + b;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>函数表达式<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// function variable&#10;function add(a,b)&#123;&#10;  // do something&#10;&#125;&#10;&#10;//IFE(&#31435;&#21363;&#25191;&#34892;&#20989;&#25968;)&#10;(function()&#123;&#10;  //do sth&#10;&#125;)()&#10;&#10;return function()&#123;&#10;  //do sth&#10;&#125;&#10;&#10;//NFE(&#21629;&#21517;&#20989;&#25968;&#34920;&#36798;&#24335;)&#10;var add=function foo(a,b)&#123;&#10;  //do sth&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>函数声明和表达式的区别<br>函数声明和变量声明 会被前置但是 赋值给变量声明的函数不会被前置<br>函数声明不能被立即调用<br>命名式函数表达式有很多Bug,不推荐使用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  var num=add(1,2);&#10;  console.log(num); //result: 3&#10;  function add(a,b)&#123;&#10;    a = +a;  //+ a &#22914;&#26524;a&#26159;&#23383;&#31526;&#20018;&#20250;&#25226;a&#36716;&#21270;&#20026;number&#10;    b = +b;&#10;    if(isNaN(a) || isNaN(b))&#123;&#10;      return ;&#10;    &#125;&#10;    return a + b;&#10;  &#125;&#10;/*&#10;&#10; */&#10;  var num=add(1,2);&#10;  console.log(num); //&#25253;&#38169;,&#25214;&#19981;&#21040;&#20989;&#25968;&#10;  var add=function(a,b)&#123;&#10;    a = +a;  //+ a &#22914;&#26524;a&#26159;&#23383;&#31526;&#20018;&#20250;&#25226;a&#36716;&#21270;&#20026;number&#10;    b = +b;&#10;    if(isNaN(a) || isNaN(b))&#123;&#10;      return ;&#10;    &#125;&#10;    return a + b;&#10;  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>用函数构造器创建函数并不常见，函数构造器创建的函数可以拿到全局变量 但是拿不到外层函数的局部变量<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var func=new Function(&#39;a&#39;,&#39;b&#39;,&#39;console.log(a+b);&#39;);&#10;func(1,2);//3&#10;var func=Function(&#39;a&#39;,&#39;b&#39;,&#39;console.log(a+b);&#39;);&#10;func(1,2);//3</span><br></pre></td></tr></table></figure></p>
-<p>this 全局的this 一般指向全局对象,在浏览器里面一般指window<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(this.document === document); //true&#10;console.log(this === window);// true&#10;this.a=37;&#10;console.log(window.a);//37</span><br></pre></td></tr></table></figure></p>
-<p>一般函数的this 也是指向window  nodejs 指向 global<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f1()&#123;&#10;  return this;&#10;&#125;&#10;f1() === window //true&#10;function f2()&#123;&#10;  &#34;use strict&#34;;// see strict mode&#10;  return this;&#10;&#125;&#10;f2() === undefined // true</span><br></pre></td></tr></table></figure></p>
-<p>函数如果作为一个对象的属性，常叫做对象的方法。<br>调用对象方法的时候一般this会指向对象<br>只要函数作为对象的方法调用,this就会指向对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var o=&#123;&#10;  pop:37,&#10;  f:function()&#123;&#10;    return this.pop;&#10;  &#125;&#10;&#125;;&#10;console.log(o.f());// 37&#10;&#10;var o=&#123;pop:37&#125;;&#10;function independent()&#123;&#10;  return this.pop;&#10;&#125;&#10;o.f=independent;&#10;console.log(o.f);//37</span><br></pre></td></tr></table></figure></p>
-<p>对象原形链上的this,调用对象原形上的方法的时候,原形上的this还是指向当前调用对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var o=&#123;f:function()&#123;return this.a + this.b&#125;&#125;;&#10;var p=Object.create(o);&#10;p.a=1;&#10;p.b=4;&#10;console.log(p.f()); //5</span><br></pre></td></tr></table></figure></p>
-<p>当使用New来创建一个构造器调用的时候 ,this 会指向函数的prototype .<br>最后函数的返回值如果没写return语句或者return 的是一个基本类型的话会将this返回 ,<br>如果最后return语句返回的是一个对象的话会将对象作为返回值<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function MyClass()&#123;&#10;  this.a=37;&#10;&#125;&#10;var o=new MyClass();&#10;console.log(o.a);//37&#10;&#10;function c2()&#123;&#10;  this.a=37;&#10;  return &#123;a:38&#125;&#10;&#125;&#10;o=new c2();&#10;console.log(o.a);//38</span><br></pre></td></tr></table></figure></p>
-<p>call 和apply可以修改函数执行时里面的this<br>通过call方法第一个参数作为你想当作this的对象 ,后面的是想要去添加的参数<br>apply 传参时把参数作为数组传进去<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function add(c,d)&#123;&#10;  return this.a + this.b + c + b;&#10;&#125;&#10;var o=&#123;a:1,b:3&#125;;&#10;add.call(a,5,7);//1+3+5+7=16&#10;add.apply(o,[10,20]);//1+3+10+20=34&#10;&#10;function bar&#123;&#10;  console.log(Object.prototype.toString.call(this))&#10;&#125;;&#10;bar(7);// object number</span><br></pre></td></tr></table></figure></p>
-<p>bind 会按照之前绑定的 this<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function f()&#123;&#10;  return this.a;&#10;&#125;&#10;var g=f.bind(&#123;a:&#39;test&#39;&#125;);&#10;console.log(g());//test&#10;var o=&#123;a:37,f:f,b:b&#125;;&#10;console.log(o.f(),o.g());//37,test</span><br></pre></td></tr></table></figure></p>
-<p>函数属性 arguments<br>可以通过 函数对象的length属性 拿到 函数参数的长度 ,通过name属性拿到函数名字<br>实际传参的个数 可以通过 arguments.length拿到<br>arguments 是一个类数组的对象，他的原形并不是Array.prototype<br>可以通过索引 访问arguments对象<br>如果参数没有传进来的话 实际上arguments和对应的参数是没有绑定关系的<br>在严格模式下 arguments 无法改写 参数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function foo(x,y,z)&#123;&#10;  arguments.length;//2&#10;  arguments[0];//1;&#10;  arguments[0]=10;&#10;  x;//10&#10;  arguments[2]=100;&#10;  z; //undefined&#10;  arguments.callee === foo;//true callee &#23646;&#24615;&#26159; arguments &#23545;&#35937;&#30340;&#19968;&#20010;&#25104;&#21592;&#65292;&#20182;&#34920;&#31034;&#23545;&#20989;&#25968;&#23545;&#35937;&#26412;&#36523;&#30340;&#24341;&#29992;&#65292;&#36825;&#26377;&#21033;&#20110;&#21311;&#21517;&#20989;&#25968;&#30340;&#36882;&#24402;&#25110;&#30830;&#20445;&#20989;&#25968;&#30340;&#23553;&#35013;&#24615;&#10;&#125;&#10;foo(1,2);&#10;foo.length;//3&#10;foo.name;//foo</span><br></pre></td></tr></table></figure></p>
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2015/03/25/JS闭包/" style="float: left;">
-        ← JS闭包
-    </a>
-    
-    
-    <a class="pull-right" href="/2015/03/23/JS数组/">
-        JS数组 →
-    </a>
-    
-</nav>
 
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/03/24/JS函数/" data-title="JS函数" data-url="http://yoursite.com/2015/03/24/JS函数/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"duoshuo_name"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
+  
+    
+  
+    
+  
+
+  
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>You have to believe in yourself. That is the secret of success</p>
+        </div>
     </div>
 </section>
-
-
       
 <!-- ============================ Footer =========================== -->
   <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
